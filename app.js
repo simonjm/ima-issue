@@ -5,6 +5,7 @@ let adsManager;
 let isAdStarted = false;
 let isAdPlaying = false;
 
+const moveBtn = document.getElementById('moveBtn');
 const videoEl = document.querySelector('.video-player > video');
 const playBtn = document.getElementById('playPauseBtn');
 videoEl.addEventListener('play', () => playBtn.textContent = 'Pause');
@@ -26,6 +27,11 @@ playBtn.addEventListener('click', (evt) => {
             videoEl.pause();
         }
     }
+});
+
+moveBtn.addEventListener('click', () => {
+    const newParent = document.getElementById('newParent');
+    newParent.appendChild(document.querySelector('.video-player'));
 });
 
 function handleVideoPlay(evt) {
